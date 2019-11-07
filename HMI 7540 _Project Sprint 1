@@ -114,6 +114,7 @@ S1 = Scheduler()
 S1.schedule(D1,P1,SLOT_11)
 S1.schedule(D1,P2,SLOT_1)
 
+#print statements for the patient calender
 P1.print_patient_calendar()
 P2.print_patient_calendar()
 
