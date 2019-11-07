@@ -14,7 +14,6 @@ SLOT_13 = '3:00PM'
 SLOT_14 = '3:30PM'
 SLOT_15 = '4:00PM'
 SLOT_16 = '4:30PM'
-SLOT_17 = '5:00PM'
 
 CLASS_NAME = 'NAME'
 CLASS_APPOINTMENT_INFO = 'APPOINTMENT_INFO'
@@ -86,15 +85,15 @@ class Scheduler(object):
             return True
 
     def isdoctoravailable(self,doctor,time):
-        if doctor.doctor_calendar[CLASS_APPOINTMENT_INFO].has_key(time):
+        if time in doctor.doctor_calendar[CLASS_APPOINTMENT_INFO]:
             print ("No Appointment Available with Dr. " + doctor.doctor_name + "\n")
             return False
         else:
             return True
 
     def ispatientavailable(self,patient,time):
-        if patient.patient_calendar[CLASS_APPOINTMENT_INFO].has_key(time):
-            print("The patient " + patient.patient_name +  " already has an appointment with Dr. " + patient.patient_calendar[CLASS_APPOINTMENT_INFO][time][CLASS_NAME] + "\n")
+        if time in patient.patient_calendar[CLASS_APPOINTMENT_INFO]:
+            print ("The patient " + patient.patient_name +  " already has an appointment with Dr. " + patient.patient_calendar[CLASS_APPOINTMENT_INFO][time][CLASS_NAME] + "\n")
             return False
         else:
             return True
@@ -115,10 +114,8 @@ S1 = Scheduler()
 S1.schedule(D1,P1,SLOT_11)
 S1.schedule(D1,P2,SLOT_1)
 
-#print
 P1.print_patient_calendar()
 P2.print_patient_calendar()
 
 D1.print_doctor_calendar()
 D2.print_doctor_calendar()
-#test
