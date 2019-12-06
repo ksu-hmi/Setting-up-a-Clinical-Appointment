@@ -20,6 +20,7 @@ CLASS_APPOINTMENT_INFO = 'APPOINTMENT_INFO'
 
 
 class Patient(object):
+
     CLASS_ID = 'ID'
     CLASS_PREV_APPOINTMENTS = 'PREVIOUS_APPOINTMENTS'
 
@@ -47,6 +48,7 @@ class Patient(object):
 
 
 class Doctor(object):
+
     CLASS_SPECIALITY = 'SPECIALITY'
 
     def __init__(self, f_name, l_name, speciality):
@@ -71,7 +73,6 @@ class Doctor(object):
         print (self.doctor_calendar)
 
 
-
 class Scheduler(object):
 
     def schedule(self,doctor,patient,time):
@@ -81,7 +82,7 @@ class Scheduler(object):
         if self.isdoctoravailable(doctor,time) and self.ispatientavailable(patient,time):
             self.update_patient_calendar(patient,doctor,time)
             self.update_doctor_calendar(patient,doctor,time)
-            print ("Appointment Scheduled with Dr. " + doctor.doctor_name +  " for patient " + patient.patient_calendar[CLASS_NAME] + "\n")
+            print ("Appointment Scheduled with Dr. " + doctor.doctor_name +  " for patient " + patient.patient_calendar[CLASS_NAME] + " at " + SLOT + "\n")
             return True
 
     def isdoctoravailable(self,doctor,time):
@@ -104,19 +105,23 @@ class Scheduler(object):
     def update_doctor_calendar(self,patient,doctor,time):
         doctor.doctor_calendar[CLASS_APPOINTMENT_INFO][time] = patient.get_patient_record()
 
+P01 = input("Enter Patient's first name: ")
+P02 = input("Enter Patient's last name: ")
+P03 = input("Enter Patient's ID: ")
 
-D1 = Doctor("Ryan", "Giggs", "Dental")
-D2 = Doctor("Alex", "Fergusson","General")
-P1 = Patient("Wayne", "Rooney", "1234")
-P2 = Patient("Wayne", "Bridge", "1214")
+D01 = input("Enter Doctor's first name: ")
+D02 = input("Enter Doctor's last name: ")
+D03 = input("Enter Doctor's Speciality: ")
+
+#SLOT = input("Enter Time: ")
+
+D1 = Doctor(D01, D02, D03)
+P1 = Patient(P01, P02, P03)
 
 S1 = Scheduler()
 S1.schedule(D1,P1,SLOT_11)
-S1.schedule(D1,P2,SLOT_1)
+#S1.schedule(D1,P1,SLOT)
 
-#print statements for the patient calender
 P1.print_patient_calendar()
-P2.print_patient_calendar()
 
 D1.print_doctor_calendar()
-D2.print_doctor_calendar()
