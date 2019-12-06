@@ -82,7 +82,7 @@ class Scheduler(object):
         if self.isdoctoravailable(doctor,time) and self.ispatientavailable(patient,time):
             self.update_patient_calendar(patient,doctor,time)
             self.update_doctor_calendar(patient,doctor,time)
-            print ("Appointment Scheduled with Dr. " + doctor.doctor_name +  " for patient " + patient.patient_calendar[CLASS_NAME] + " at " + SLOT + "\n")
+            print ("Appointment Scheduled with Dr. " + doctor.doctor_name +  " for patient " + patient.patient_calendar[CLASS_NAME] + " at " + SLOT_11 + "\n")
             return True
 
     def isdoctoravailable(self,doctor,time):
