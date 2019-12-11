@@ -1,20 +1,3 @@
-SLOT_1 = '8:00AM'
-SLOT_2 = '8:30AM'
-SLOT_3 = '9:00AM'
-SLOT_4 = '9:30AM'
-SLOT_5 = '10:00AM'
-SLOT_6 = '10:30AM'
-SLOT_7 = '11:00AM'
-SLOT_8 = '11:30AM'
-SLOT_9 = '1:00PM'
-SLOT_10 = '1:30PM'
-SLOT_11 = '2:00PM'
-SLOT_12 = '2:30PM'
-SLOT_13 = '3:00PM'
-SLOT_14 = '3:30PM'
-SLOT_15 = '4:00PM'
-SLOT_16 = '4:30PM'
-
 CLASS_NAME = 'NAME'
 CLASS_APPOINTMENT_INFO = 'APPOINTMENT_INFO'
 
@@ -110,22 +93,24 @@ class Scheduler(object):
         doctor.doctor_calendar[CLASS_APPOINTMENT_INFO][time] = patient.get_patient_record()
 
         
-P01 = input("Enter Patient's first name: ")
-P02 = input("Enter Patient's last name: ")
-P03 = input("Enter Patient's ID: ")
+while True:
+    
+    SLOT = input("Enter Time: ")
+        
+    P01 = input("Enter Patient's first name: ")
+    P02 = input("Enter Patient's last name: ")
+    P03 = input("Enter Patient's ID: ")
 
-D01 = input("Enter Doctor's first name: ")
-D02 = input("Enter Doctor's last name: ")
-D03 = input("Enter Doctor's Speciality: ")
-            
-SLOT = input("Enter Time: ")
+    D01 = input("Enter Doctor's first name: ")
+    D02 = input("Enter Doctor's last name: ")
+    D03 = input("Enter Doctor's Speciality: ")
 
-D1 = Doctor(D01, D02, D03)
-P1 = Patient(P01, P02, P03)
+    D1 = Doctor(D01, D02, D03)
+    P1 = Patient(P01, P02, P03)
 
-S1 = Scheduler()
-S1.schedule(D1,P1,SLOT)
+    S1 = Scheduler()
+    S1.schedule(D1,P1,SLOT)
 
-P1.print_patient_calendar()
+    P1.print_patient_calendar()
 
-D1.print_doctor_calendar()
+    D1.print_doctor_calendar()
