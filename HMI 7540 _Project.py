@@ -94,8 +94,6 @@ class Scheduler(object):
 
         
 while True:
-    
-    SLOT = input("Enter Time: ")
         
     P01 = input("Enter Patient's first name: ")
     P02 = input("Enter Patient's last name: ")
@@ -104,6 +102,8 @@ while True:
     D01 = input("Enter Doctor's first name: ")
     D02 = input("Enter Doctor's last name: ")
     D03 = input("Enter Doctor's Speciality: ")
+    
+    SLOT = input("Enter Time: ")
 
     D1 = Doctor(D01, D02, D03)
     P1 = Patient(P01, P02, P03)
