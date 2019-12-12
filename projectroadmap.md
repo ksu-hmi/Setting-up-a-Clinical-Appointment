@@ -9,4 +9,4 @@
 - [x] 7. Write a code which inputs the patient's information. (Neha)
 - [x] 8. Create a PowerPoint presentation to highlight major aspects of the project (Folake)
 - [ ] 9. Write a code that retrieves patient information by patient name (Edwin, Folake, Neha)
-- [ ] 10. Final review of codes to ensure accuracy and make adjustments where necessary (Edwin, Folake, Neha) 
+- [x] 10. Final review of codes to ensure accuracy and make adjustments where necessary (Edwin, Folake, Neha) 
